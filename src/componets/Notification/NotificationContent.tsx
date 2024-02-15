@@ -1,11 +1,13 @@
+import { twMerge } from 'tailwind-merge'
 interface NotificationContentProps {
     text: string
+    className?: string
 }
 
-export function NotificationContent({text}: NotificationContentProps) {
+export function NotificationContent({text, className}: NotificationContentProps) {
     return (
         <div className="flex-1 flex flex-col">
-            <p className="text-sm leading-relaxed text-zinc-500">
+            <p className={twMerge(`text-sm leading-relaxed text-zinc-500`, className)}>
                 {text}
             </p>
         </div>
